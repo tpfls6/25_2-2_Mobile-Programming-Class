@@ -2,10 +2,10 @@
 
 ## Learning Objectives
 - Understand basic Kotlin syntax
-- Declare variables and function
+- Declare variables and functions
 
-## Pratice Files
+## Practice Files
 - `MainActivity.kt`: variables, functions
 
 ## How to Run
-- Click the Run button in Android Studio. (control + R)
+- Click the Run button in Android Studio. (⌘ + R on macOS)
