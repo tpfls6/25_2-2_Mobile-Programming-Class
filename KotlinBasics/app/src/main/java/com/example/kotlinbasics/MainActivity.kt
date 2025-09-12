@@ -28,19 +28,66 @@ class MainActivity : ComponentActivity() {
             }
         }
         week02Variables()
+        week02Functions()
     }
 }
 
 private fun week02Variables(){
-    println("Week 02: Variables")
+//    println("Week 02: Variables")
+//
+//    val courseName = "Mobile Programming"
+//    //courseName = "IoT Programming" -> 에러
+//    var week = 1
+//    week = 2 //에러 X
+//
+//    println("Course : $courseName")
+//    println("Week : $week")
 
-    val courseName = "Mobile Programming"
-    //courseName = "IoT Programming" -> 에러
-    var week = 1
-    week = 2 //에러 X
+    println("== Kotlin Variables ==")
 
-    println("Course : $courseName")
-    println("Week : $week")
+    // val(immutable) vs var(mutable)
+    val name = "Android"
+    var version = 8
+
+    println("Hello $name $version")
+
+    val age: Int = 21
+    val height: Double = 158.2 //명시 안해도 됨
+    val isStudent: Boolean = true
+
+    println("Age: $age, Height: $height, Student: $isStudent")
+
+    //var nickname: String = null -> null 에러
+    var nickname: String? = null // ? 붙이면 null 허용
+    nickname = "barserin"
+    println("Nickname: $nickname ${nickname?.length}")
+
+
+}
+
+private fun week02Functions(){
+//    println("Week 02: Functions")
+//
+//    fun greet(name: String) = "Hello, $name!"
+//
+//    println(greet("Android developer"))
+
+    println("== Kotlin Functions ==")
+
+    fun greet(name: String): String {
+        return "Hello, $name"
+    }
+
+    fun add(a: Int, b: Int) = a + b
+
+    fun introduce(name: String, age: Int =19){ //단일 변수
+        println("My name is $name and I'm $age years old")
+    }
+
+    println(greet("Kotlin"))
+    println("Sum: ${add(5, -71)}")
+    introduce("Kim", 7)
+    introduce("Lee")
 }
 
 @Composable
