@@ -27,9 +27,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        week02Variables()
-        week02Functions()
+        //week02Variables()
+        //week02Functions()
         week03Classes()
+        week03Collections()
     }
 }
 
@@ -107,6 +108,35 @@ private fun week03Classes(){
     student.name = "Mirae"
     student.age = 21
     student.introduce()
+
+    data class Person(val name: String, val age: Int)
+    val person1 = Person("Kim", 23)
+    val person2 = Person("Kim", 23) //두개는 같음, 주소도 같음
+
+    println("Person1 : $person1")
+    println("Equal? ${person1 == person2}")
+}
+
+private fun week03Collections(){
+    println("== Kotlin Collections ==")
+
+    val fruits = listOf("apple", "banana", "orange") // 리스트 (변경 X)
+    val mutableFruits = mutableListOf("kiwi", "watermelon") // 리스트 (변경 O)
+
+    //fruits.add() // 변경 X -> 쓸 때부터 에러
+    println("Fruits : $fruits")
+
+    mutableFruits.add("banana") // .add()로 추가
+    println("MutableFruits : $mutableFruits")
+
+    val scores = mapOf("Kim" to 100, "Park" to 97, "Lee" to 99)
+    println("Scores : $scores")
+
+    for(fruit in fruits){
+        println("I like $fruit")
+    }
+
+    scores.forEach{(name, score) -> println("$name scored $score")}
 }
 
 @Composable
